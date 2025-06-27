@@ -25,6 +25,8 @@ public class LostUpdateDemo {
 
     public static void main(String[] args) {
         SynchronizedThread job = new SynchronizedThread();
+        SynchronizedThread job1 = new SynchronizedThread();
+        SynchronizedThread job2 = new SynchronizedThread();
         Thread t1 = new Thread(job, "t1");
         Thread t2 = new Thread(job, "t2");
 
@@ -39,5 +41,7 @@ public class LostUpdateDemo {
         }
 
         System.out.println(job.getValue());
+        System.out.println(job1.getValue());
+        System.out.println(job2.getValue());
     }
 }
