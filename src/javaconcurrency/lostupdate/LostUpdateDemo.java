@@ -8,14 +8,14 @@ public class LostUpdateDemo {
         @Override
         public void run() {
 
-            for (int i = 1; i < 5000; i++) {
+            for (int i = 0; i < 5000; i++) {
                 increment();
                 Thread.yield();
             }
 
         }
 
-        public void increment() {
+        public synchronized void increment() {
             int i = value;
             value = i + 1;
         }

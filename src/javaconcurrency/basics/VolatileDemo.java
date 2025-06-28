@@ -17,7 +17,7 @@ public class VolatileDemo {
                 }
                 log("Thread 1 finished. Counted up to " + counter);
             }
-        });
+        }); 
 
         Thread t2 = new Thread(new Runnable() {
             public void run() {
