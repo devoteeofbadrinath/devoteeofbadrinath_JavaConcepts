@@ -9,7 +9,7 @@ public class LockDemo {
 
     private static StringBuilder stringBuilder = new StringBuilder();
 
-    public static long ITERATIONS = 10000;
+    public static long ITERATIONS = 1000;
 
     private static StringBuilder result = new StringBuilder();
 
@@ -46,10 +46,11 @@ public class LockDemo {
 
         @Override
         public void run() {
-            for (int i = 0; i < 5; i++) {
+            for (int i = 0; i < 1; i++) {
                 lock.lock();
                 String s = stringBuilder.toString();
-                log(s.substring(Math.max(s.length() - 30, 0)).trim());
+                System.out.println(" length is "+s.length() + " s = "+s);
+                log(s.substring(Math.max(s.length() - 42, 0)).trim());
                 try {
                     Thread.sleep(100);
                 } catch (InterruptedException e) {
@@ -79,6 +80,7 @@ public class LockDemo {
             e.printStackTrace();
         }
 
+        System.out.println(stringBuilder.toString().length());
         System.out.println(result);
     }
 }
