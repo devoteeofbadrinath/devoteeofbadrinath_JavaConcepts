@@ -2,6 +2,7 @@ package javaconcurrency.locks;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public class LockDemo {
 
@@ -63,10 +64,16 @@ public class LockDemo {
     }
 
     public static void main(String[] args) {
-        Lock lock = new ReentrantLock();
-        t1 = new Thread(new WritingThread("A", lock));
-        t2 = new Thread(new WritingThread("B", lock));
-        t3 = new Thread(new ReadingThread(new ReentrantLock()));
+//        Lock lock = new ReentrantLock();
+//        t1 = new Thread(new WritingThread("A", lock));
+//        t2 = new Thread(new WritingThread("B", lock));
+//        t3 = new Thread(new ReadingThread(new ReentrantLock()));
+
+        ReentrantReadWriteLock lock = new ReentrantReadWriteLock();
+        t1 = new Thread(new WritingThread("A", lock.writeLock()));
+        t2 = new Thread(new WritingThread("B", lock.writeLock()));
+        t3 = new Thread(new ReadingThread(lock.readLock()));
+
         t1.start();
         t2.start();
         t3.start();
@@ -80,7 +87,7 @@ public class LockDemo {
             e.printStackTrace();
         }
 
-        System.out.println(stringBuilder.toString().length());
+        System.out.println(stringBuilder.toString().length()+ " String = " + stringBuilder.toString());
         System.out.println(result);
     }
 }
