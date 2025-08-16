@@ -24,7 +24,7 @@ public class SimpleServer {
                     String echoString = input.readLine();
                     System.out.println("Server got request data: " + echoString);
                     if (echoString.equals("exit")) {
-                        break
+                        break;
                     }
                     output.println("Echo from server: " + echoString);
 
