@@ -21,6 +21,12 @@ public class SimpleServer {
                         new PrintWriter(socket.getOutputStream(), true);
 
                 while (true) {
+                    String echoString = input.readLine();
+                    System.out.println("Server got request data: " + echoString);
+                    if (echoString.equals("exit")) {
+                        break
+                    }
+                    output.println("Echo from server: " + echoString);
 
                 }
             }
