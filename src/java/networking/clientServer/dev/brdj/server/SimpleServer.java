@@ -19,6 +19,10 @@ public class SimpleServer {
                         new InputStreamReader(socket.getInputStream()));
                 PrintWriter output =
                         new PrintWriter(socket.getOutputStream(), true);
+
+                while (true) {
+
+                }
             }
         } catch (IOException e) {
             System.out.println("Server exception " + e.getMessage());
