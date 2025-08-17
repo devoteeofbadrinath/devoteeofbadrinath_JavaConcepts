@@ -1,4 +1,4 @@
-package java.networking.clientServer.dev.brdj.client;
+package demojava.networking.clientServer.dev.brdj.client;
 
 import java.io.BufferedReader;
 import java.io.IOException;
