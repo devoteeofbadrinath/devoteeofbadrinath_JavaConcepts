@@ -7,6 +7,7 @@ import com.fil.crm.paas.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
@@ -23,6 +24,12 @@ public class EmployeeController {
     @Autowired
     public EmployeeController(EmployeeService employeeService) {
         this.employeeService = employeeService;
+    }
+
+    @GetMapping("/hello")
+    public String hello(Model model) {
+        model.addAttribute("name", "Shivam");
+        return "hello";  // resolves to /WEB-INF/jsp/hello.jsp
     }
 
 //    @GetMapping
