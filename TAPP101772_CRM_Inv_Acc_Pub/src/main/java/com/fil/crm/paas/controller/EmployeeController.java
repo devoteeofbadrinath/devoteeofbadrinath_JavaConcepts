@@ -26,12 +26,6 @@ public class EmployeeController {
         this.employeeService = employeeService;
     }
 
-    @GetMapping("/hello")
-    public String hello(Model model) {
-        model.addAttribute("name", "Shivam");
-        return "hello";  // resolves to /WEB-INF/jsp/hello.jsp
-    }
-
 //    @GetMapping
 //    public ResponseEntity<List<Employee>> getAllEmployees() {
 //        List<Employee> employees = employeeService.getAllEmployees();
