@@ -9,7 +9,7 @@ public class JspController {
 
     @GetMapping("/hello")
     public String hello(Model model) {
-        //model.addAttribute("name", "Shivam");
+        model.addAttribute("name", "Shivam");
         return "hello";  // resolves to /WEB-INF/jsp/hello.jsp
     }
 }
