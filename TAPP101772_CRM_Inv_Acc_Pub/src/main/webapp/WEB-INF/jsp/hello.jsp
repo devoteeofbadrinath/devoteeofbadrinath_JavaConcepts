@@ -12,6 +12,6 @@
 </head>
 <body>
 <h2>Hello, JSP from Spring Boot!</h2>
-<p>User: ${name}</p>
+<%--<p>User: ${name}</p>--%>
 </body>
 </html>
