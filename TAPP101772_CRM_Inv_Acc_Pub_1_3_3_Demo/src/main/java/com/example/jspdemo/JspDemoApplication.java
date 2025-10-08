@@ -3,15 +3,11 @@ package com.example.jspdemo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.boot.web.support.SpringBootServletInitializer;
 
 @SpringBootApplication
-public class JspDemoApplication extends SpringBootServletInitializer {
+public class JspDemoApplication {
 
-    @Override
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-        return application.sources(JspDemoApplication.class);
-    }
+
 
     public static void main(String[] args) {
         SpringApplication.run(JspDemoApplication.class, args);
