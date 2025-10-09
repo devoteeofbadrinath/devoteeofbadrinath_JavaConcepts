@@ -1,5 +1,14 @@
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
 	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.example</groupId>
+	<artifactId>springboot-jsp-demo</artifactId>
+	<version>1.0.0</version>
+	<packaging>jar</packaging>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -7,32 +16,78 @@
 		<version>1.3.3.RELEASE</version>
 	</parent>
 
-	<groupId>com.example</groupId>
-	<artifactId>jsp-demo</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<properties>
+
+		<servlet.version>1.2</servlet.version>
+		<testng.version>6.8.7</testng.version>
+		<mockito.version>1.9.5</mockito.version>
+		<!-- <spring.version>4.2.5.RELEASE</spring.version>
+		<spring-boot.version>1.2.7.RELEASE</spring-boot.version> -->
+		<jdk.version>1.8</jdk.version>
+		<servlet.version>1.2</servlet.version>
+		<postgres.version>9.4-1200-jdbc4</postgres.version>
+		<dbcp.version>1.4</dbcp.version>
+		<commons.lang.version>2.6</commons.lang.version>
+		<logback.version>1.1.3</logback.version>
+		<jcl.slf4j.version>1.7.12</jcl.slf4j.version>
+		<jstl.version>1.2</jstl.version>
+		<spring.batch.version>3.0.7.RELEASE</spring.batch.version>
+		<!-- <spring.security.version>3.2.3.RELEASE</spring.security.version> -->
+		<minimum.junit.code.coverage>0.85</minimum.junit.code.coverage>
+		<sonar.core.codeCoveragePlugin>jacoco</sonar.core.codeCoveragePlugin>
+		<sonar.coverage.exclusions>
+			**/com/fil/crm/paas/*,
+			**/com/fil/crm/paas/controller/concern/*,
+			**/com/fil/crm/paas/dao/*,
+			**/com/fil/crm/paas/domain/*,
+			**/com/fil/crm/paas/enums/*,
+			**/com/fil/crm/paas/exception/*,
+			**/com/fil/crm/paas/helper/EmailHelper.*,
+			**/com/fil/crm/paas/quartz/configuration/*,
+			**/com/fil/crm/paas/quartz/jobs/*,
+			**/com/fil/crm/paas/security/*,
+			**/com/fil/crm/paas/vo/*
+		</sonar.coverage.exclusions>
+		<sonar.language>java</sonar.language>
+	</properties>
+
 
 	<dependencies>
-		<!-- Web -->
+
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.boot</groupId>-->
+<!--			<artifactId>spring-boot-starter-velocity</artifactId>-->
+<!--			<version>1.3.3.RELEASE</version>-->
+<!--		</dependency>-->
+
+		<!-- Spring Boot Web -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
 		<!-- JSP support -->
-<!--		<dependency>-->
-<!--			<groupId>org.apache.tomcat.embed</groupId>-->
-<!--			<artifactId>tomcat-embed-jasper</artifactId>-->
-<!--		</dependency>-->
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+		</dependency>
 
 		<!-- JSTL -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+		</dependency>
+
 <!--		<dependency>-->
-<!--			<groupId>javax.servlet</groupId>-->
-<!--			<artifactId>jstl</artifactId>-->
+<!--			<groupId>org.apache.velocity</groupId>-->
+<!--			<artifactId>velocity</artifactId>-->
+<!--			<version>1.7</version>-->
 <!--		</dependency>-->
+
 	</dependencies>
 
 	<build>
+		<finalName>springboot-jsp-demo</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -40,4 +95,5 @@
 			</plugin>
 		</plugins>
 	</build>
+
 </project>
