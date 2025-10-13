@@ -8,7 +8,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
-  <title>INVESTMENT ACCOUNTS</title>
+  <title>App is running</title>
 
   <style type="text/css">
 
